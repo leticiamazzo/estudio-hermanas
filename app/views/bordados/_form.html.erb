@@ -1,0 +1,32 @@
+<%= form_with(model: @bordado, local: true) do |form| %>
+
+    <% if @bordado.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@bordado.errors.count, "error") %> prohibited
+          this bordado from being saved:
+        </h2>
+        <ul>
+          <% @bordado.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </p>
+  
+    <p>
+      <%= form.label :text %><br>
+      <%= form.text_area :text %>
+    </p>
+  
+    <p>
+      <%= form.submit %>
+    </p>
+  
+  <% end %>
+  

@@ -1,0 +1,22 @@
+<h1>Listing Bordados</h1>
+<img src="https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-9/17021708_190916358060015_4664344612511847412_n.png?_nc_cat=0&oh=77f3d8b2b09d45c827c96dca80fcf316&oe=5C061CA9"></img><br>
+<%= link_to 'New bordado', new_bordado_path, class: "button" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr>
+  <% @bordados.each do |bordado| %>
+    <tr>
+      <td><%= bordado.title %></td>
+      <td><%= bordado.text %></td>
+      <td><%= link_to 'Show', bordado_path(bordado) %></td>
+      <td><%= link_to 'Edit', edit_bordado_path(bordado) %></td>
+      <td><%= link_to 'Destroy', bordado_path(bordado),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
